@@ -1,13 +1,14 @@
 recipe com.zetapush.v3.extensions 1.0.0;
 
-/**
- * Authentication service
- */
-service auth = new weak();
+// Compatibility Layer Services
+
 /**
  * Producer/Consumer service, used to extends ZetaPush
  */
 service workers = new queue();
+
+// Debug Layer Services 
+
 /**
  * Trigger service, used to handle "Producer/Consumer" api events
  */
@@ -16,3 +17,42 @@ service triggers = new trigger();
  * Macro service, used to broadcast events on devtools
  */
 service api = new macro() for 'debug';
+
+// General Purpose Services
+
+/**
+ * Weak authentication service
+ */
+service weakAuth = new weak();
+/**
+ * Credentials authentication service
+ */
+service simpleAuth = new simple();
+/**
+ * FileSystem service
+ */
+service filesystem = new zpfs_hdfs();
+/**
+ * Gda service
+ */
+service gda = new gda();
+/**
+ * Scheduler service
+ */
+service scheduler = new cron();
+/**
+ * Stack service
+ */
+service search = new search();
+/**
+ * Stack service
+ */
+service stack = new stack();
+/**
+ * Templating service
+ */
+service template = new template();
+/**
+ * User directory service
+ */
+service userdir = new userdir();
